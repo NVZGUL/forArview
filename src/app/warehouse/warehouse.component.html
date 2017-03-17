@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6">Наименование / характеристики</div>
+  <div class="col-md-2">Артикул / Штрих-код</div>
+  <div class="col-md-2">Торговые точки</div>
+  <div class="col-md-1">Цена</div>
+  <div class="col-md-1">Остатки</div>
+</div>
+<div class="row" *ngFor="let item of warehouseItem">
+  <div class="col-md-6">{{item.name}}</div>
+  <div class="col-md-2">{{item.code[0]}} {{item.code[1]}}</div>
+  <div class="col-md-2" >
+    <ul *ngFor="let i of item.output">
+      <li>{{i}}</li>
+    </ul>
+  </div>
+  <div class="col-md-1">
+    <ul *ngFor="let i of item.price">
+      <li>{{i}}</li>
+    </ul>
+  </div>
+  <div class="col-md-1">
+    <ul *ngFor="let i of item.remains">
+      <li>{{i}}</li>
+    </ul>
+  </div>
+</div>
+
